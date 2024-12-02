@@ -41,7 +41,7 @@ class ConcreteCreatorB extends Creator {
 }
 
 // Client Code
-public class Example {
+public class AbstractClassExample {
     public static void main(String[] args) {
         Creator creatorA = new ConcreteCreatorA();
         Product productA = creatorA.factoryMethod();
