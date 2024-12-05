@@ -24,7 +24,7 @@ public class TwoSum {
             }
 
             // Store the current number and its index in the map
-            numToIndex.put(nums[i], i);3 - 0, 2 - 1
+            numToIndex.put(nums[i], i);
         }
 
         // In case there is no solution, though the problem guarantees one solution
