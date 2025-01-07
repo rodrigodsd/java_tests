@@ -1,23 +1,7 @@
+package observer;
+
 import java.util.ArrayList;
 import java.util.List;
-
-public void main(String[] args) {
-
-    Smartphone smartphoneObserver = new Smartphone();
-
-    WheatherStation station = new WheatherStation();
-    station.addObserver(smartphoneObserver);
-    station.setWeather("cloudy");
-    station.updateObservers();
-
-    smartphoneObserver.diplay();
-
-    station.setWeather("rainy");
-    station.updateObservers();
-
-    smartphoneObserver.diplay();
-
-}
 
 interface Subject {
 
@@ -32,6 +16,27 @@ interface WeatherObserver {
     public void update(String weather);
 
     void diplay();
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Smartphone smartphoneObserver = new Smartphone();
+
+        WheatherStation station = new WheatherStation();
+        station.addObserver(smartphoneObserver);
+        station.setWeather("cloudy");
+        station.updateObservers();
+
+        smartphoneObserver.diplay();
+
+        station.setWeather("rainy");
+        station.updateObservers();
+
+        smartphoneObserver.diplay();
+
+    }
 }
 
 class WheatherStation implements Subject {
