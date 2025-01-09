@@ -17,13 +17,12 @@ public class SelectionSort {
                     indexMin = j;
                 }
             }
-            if (indexMin > i)
-                swap(i, indexMin, nums);
+            swap(i, indexMin, nums);
         }
         System.out.println("nums : " + Arrays.toString(nums));
     }
 
-    void swap(int indexHigh, int indexLow, int[] nums) {
+    private void swap(int indexHigh, int indexLow, int[] nums) {
         int tmpValue = nums[indexHigh];
         nums[indexHigh] = nums[indexLow];
         nums[indexLow] = tmpValue;

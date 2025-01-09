@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Java/Data-structures" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java/Leet-codes" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java/design-patterns" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/sort-algorithms" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
