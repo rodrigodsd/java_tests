@@ -57,6 +57,7 @@ class WheatherStation implements Subject {
 
     @Override
     public void updateObservers() {
+        // replace by virtual threads
         weatherObservers.forEach(o -> o.update(this.weather));
     }
 
