@@ -1,9 +1,11 @@
+package twopointers;
+
 import java.util.Arrays;
 
-public class CountSort {
+public class SortColors {
 
     public void main(String[] args) {
-        int[] nums = new int[]{ 2,0,2,1,1,0 };
+        int[] nums = new int[]{2, 1, 2, 0, 1, 0, 1, 0, 1};
 
         int min = Arrays.stream(nums).min().orElse(0);
         int max = Arrays.stream(nums).max().orElse(Integer.MAX_VALUE);
@@ -29,7 +31,7 @@ public class CountSort {
                 index++;
             }
         }
+
         System.out.println(Arrays.toString(nums));
     }
-
 }
