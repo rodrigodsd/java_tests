@@ -2,7 +2,7 @@ package twopointers;
 
 import java.util.Arrays;
 
-public class SortColors {
+public class SortColorsCountingSort {
 
     public void main(String[] args) {
         int[] nums = new int[]{2, 1, 2, 0, 1, 0, 1, 0, 1};
