@@ -1,8 +1,9 @@
 package linkedlists;
 
 import java.util.List;
+import java.util.Objects;
 
-public class LinkedList {
+public class ReversingLl {
 
     public void main(String[] args) {
 
@@ -14,19 +15,22 @@ public class LinkedList {
             root = insertEnd(root, nums.get(i));
         }
 
-        display(root);
+        Node curr = root;
+        Node prev = null;
+        Node next = null;
+        while (curr != null) {
 
-        root = insertAtFront(root, 9);
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
 
-        display(root);
-
-        root = removeNode(root, 3);
-
-        display(root);
+        display(prev);
 
     }
 
-    public Node removeNode(Node root, int target) {
+    Node removeNode(Node root, int target) {
         Node curr = root;
         Node prev = null;
         while (curr.next != null) {
@@ -42,7 +46,7 @@ public class LinkedList {
         return root;
     }
 
-    public Node insertAtFront(Node root, int new_data) {
+    Node insertAtFront(Node root, int new_data) {
 
         // Create a new node with the given data
         Node new_node = new Node(new_data);
@@ -72,7 +76,7 @@ public class LinkedList {
         return root;
     }
 
-    public void display(Node root) {
+    void display(Node root) {
         while (root != null) {
             System.out.print(root.value + " -> ");
             root = root.next;
@@ -80,12 +84,18 @@ public class LinkedList {
         System.out.print("\n");
     }
 
+
     class Node {
         int value;
         Node next;
 
         public Node(int value) {
             this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "value : " + value + ", next value: " + (Objects.isNull(next) ? "null" : next.value);
         }
     }
 

@@ -1,8 +1,9 @@
 package linkedlists;
 
 import java.util.List;
+import java.util.Objects;
 
-public class LinkedList {
+public class FastAndSlow {
 
     public void main(String[] args) {
 
@@ -14,19 +15,20 @@ public class LinkedList {
             root = insertEnd(root, nums.get(i));
         }
 
+        var fast = root;
+        var slow = root;
+        while (fast.next != null) {
+
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
         display(root);
-
-        root = insertAtFront(root, 9);
-
-        display(root);
-
-        root = removeNode(root, 3);
-
-        display(root);
+        System.out.println("slow : " + slow.toString() + "\nfast : " + fast.toString());
 
     }
 
-    public Node removeNode(Node root, int target) {
+    Node removeNode(Node root, int target) {
         Node curr = root;
         Node prev = null;
         while (curr.next != null) {
@@ -42,7 +44,7 @@ public class LinkedList {
         return root;
     }
 
-    public Node insertAtFront(Node root, int new_data) {
+    Node insertAtFront(Node root, int new_data) {
 
         // Create a new node with the given data
         Node new_node = new Node(new_data);
@@ -72,7 +74,7 @@ public class LinkedList {
         return root;
     }
 
-    public void display(Node root) {
+    void display(Node root) {
         while (root != null) {
             System.out.print(root.value + " -> ");
             root = root.next;
@@ -80,12 +82,18 @@ public class LinkedList {
         System.out.print("\n");
     }
 
+
     class Node {
         int value;
         Node next;
 
         public Node(int value) {
             this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "value : " + value + ", next value: " + (Objects.isNull(next) ? "null" : next.value);
         }
     }
 
