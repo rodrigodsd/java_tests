@@ -43,21 +43,21 @@ class DoublyLinkedList {
         this.tail = null;
     }
 
-    public DoublyLinkedListNode sortedInsert(DoublyLinkedListNode llist, int data) {
+    public DoublyLinkedListNode sortedInsert(DoublyLinkedListNode node, int data) {
 
-        DoublyLinkedListNode head = llist;
+        DoublyLinkedListNode head = node;
 
-        while (llist.next != null) {
+        while (node.next != null) {
 
-            if (data > llist.data && data <= llist.next.data) {
+            if (data > node.data && data <= node.next.data) {
                 DoublyLinkedListNode newNode = new DoublyLinkedListNode(data);
-                DoublyLinkedListNode tmp = llist.next;
-                llist.next = newNode;
+                DoublyLinkedListNode tmp = node.next;
+                node.next = newNode;
                 newNode.next = tmp;
-                newNode.prev = llist;
+                newNode.prev = node;
             }
 
-            llist = llist.next;
+            node = node.next;
 
         }
 
